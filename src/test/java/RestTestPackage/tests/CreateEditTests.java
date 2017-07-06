@@ -25,12 +25,12 @@ public class CreateEditTests {
         @Test
         public void create() {
             Issue issue = new Issue();
-            issue.setProjectId(2071);
+            issue.setProjectId("2071");
             issue.setSubject("nkamarskaya_bug");
             issue.setDescription("1 2 3");
-            issue.setTrackerId(3);            //Bug
-            issue.setWatcherId(104);          //Kamarskaya
-            issue.setAssignedId(104);         //Kamarskaya
+            issue.setTrackerId("3");            //Bug
+            issue.setWatcherId("104");          //Kamarskaya
+            issue.setAssignedId("104");         //Kamarskaya
 
             given().spec(requestSpec)
                     .body(issue)
@@ -42,12 +42,12 @@ public class CreateEditTests {
         public void edit() {
 
             Issue issue = new Issue();
-            issue.setProjectId(2071);
+            issue.setProjectId("2071");
             issue.setSubject("nkamarskaya_bug");
             issue.setDescription("1 2 3");
-            issue.setTrackerId(3);            //Bug
-            issue.setWatcherId(104);          //Kamarskaya
-            issue.setAssignedId(104);         //Kamarskaya
+            issue.setTrackerId("3");            //Bug
+            issue.setWatcherId("104");          //Kamarskaya
+            issue.setAssignedId("104");         //Kamarskaya
 
             int issueId = given()
                     .spec(requestSpec)
@@ -57,8 +57,8 @@ public class CreateEditTests {
                     .extract().path("issue.id");
 
 
-            issue.setPriorityId(6);               //Urgent
-            issue.setDoneRatio(50);               //50%
+            issue.setPriorityId("6");               //Urgent
+            issue.setDoneRatio("50");               //50%
 
 
             given().header("X-Redmine-API-Key","ef56b46ab35101865a50bcf1b28974bd77eff10d")
